@@ -65,8 +65,8 @@ router.patch('/:id/project/:project_id', async (req, res) => {
     const project_id = req.params.project_id;
     try {
         const { elements } = req.body;
-        const result = await Project.findByIdAndUpdate(project_id, elements, { new: true });
-        return res.status(204).json({ message: 'Project Updated', result: result });
+        const result = await Project.findByIdAndUpdate(project_id, {elements: elements}, { new: true });
+        return res.status(201).json({ message: 'Project Updated', result: result });
     } catch (e) {
         console.log(e);
         return res.status(500).send({ message: "Something went wrong" });
