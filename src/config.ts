@@ -9,6 +9,6 @@ export default envsafe({
         choices: ['development', 'production'],
     }),
     AUTH_TOKEN: str({
-        devDefault: 'aMCSdT2b9JI1qhk910S4L39u2OxjPxGGvDzdbQKQEjR3Kq9znzRvyqC7Ux45LSpN',
+        devDefault: process.env.AUTH_TOKEN,
     }),
 })
