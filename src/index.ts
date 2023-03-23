@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 app.use(authenticate);
 app.use('/auth', AuthRoute)
 app.use('/user', Project)
+app.set('trust proxy', 1)
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
